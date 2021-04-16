@@ -2,6 +2,9 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 mongoose.connect('mongodb://localhost:27017/whiteboard',
     {useNewUrlParser: true, useUnifiedTopology: true});
@@ -24,6 +27,7 @@ demos(app);
 
 require("./controllers/quizzes-controller")(app)
 require("./controllers/question-controller")(app)
+require("./controllers/quiz-attempts-controller")(app)
 
 
 app.listen(3000)
