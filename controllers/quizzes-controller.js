@@ -18,7 +18,11 @@ module.exports = (app) => {
                 res.send(quiz)
             })
     }
-
+    const createQuiz = (req, res) => {
+        quizzesService.createQuiz(req.body)
+            .then(quiz => res.send(quiz))
+    }
+    app.post('/api/quizzes', createQuiz)
     app.get("/api/quizzes", findAllQuizzes)
     app.get("/api/quizzes/:qid", findQuizById)
 }

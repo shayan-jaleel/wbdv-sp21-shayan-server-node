@@ -6,6 +6,11 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+// mongodb+srv://shayan:<password>@cluster0.likmg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+// mongoose.connect("mongodb+srv://shayan:shayan@cluster0.likmg.mongodb.net/whiteboard?retryWrites=true&w=majority",
+//     {useNewUrlParser: true, useUnifiedTopology: true});
+
 mongoose.connect('mongodb://localhost:27017/whiteboard',
     {useNewUrlParser: true, useUnifiedTopology: true});
 
