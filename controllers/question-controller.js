@@ -27,8 +27,13 @@ module.exports = (app) => {
                 res.send(questions)
             })
     }
+    const createQuestion = (req, res) => {
+        questionService.createQuestion(req.body)
+            .then(question => res.send(question))
+    }
 
     app.get("/api/questions", findAllQuestions);
     app.get("/api/questions/:qid", findQuestionById);
     app.get("/api/quizzes/:qzid/questions", findQuestionsForQuiz);
+    app.post('/api/questions', createQuestion)
 }

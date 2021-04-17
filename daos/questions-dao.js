@@ -4,10 +4,12 @@ const questionsModel = require('../db/questions/questions-model')
 const findAllQuestions = () => questionsModel.find()
 const findQuestionById = (qid) => questionsModel.findById(qid)
 const findQuestionsForQuiz = (qzid) => questionsModel.find({quizId: qzid})
+
+const createQuestion = (question) => questionsModel.create(question)
 // const findQuestionsForQuiz = (qzid) => questionsModel.filter((question) => question.quizId === qzid)
 
     // .populate('questions').then(quiz => quiz.questions)
 // const findQuestionsForQuiz = (qzid) => quizzesModel.findById(qzid)
 //     .populate('questions').then(quiz => quiz.questions)
 
-module.exports = {findAllQuestions, findQuestionById, findQuestionsForQuiz}
+module.exports = {findAllQuestions, findQuestionById, findQuestionsForQuiz, createQuestion}

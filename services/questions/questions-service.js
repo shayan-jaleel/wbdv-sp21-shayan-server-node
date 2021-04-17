@@ -1,7 +1,10 @@
 // const questions = require("./questions.json")
 // const questionsModel = require("../../db/questions/questions-model")
 const questionsDao = require("../../daos/questions-dao")
-const createQuestion = () => {}
+const createQuestion = (question) => {
+    return questionsDao.createQuestion(question)
+}
+
 const createQuestionForQuiz = () => {}
 
 const findAllQuestions = () => {
